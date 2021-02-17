@@ -18,7 +18,7 @@
             "preLaunchTask" : "build debug"
 		},
 		{
-            "name": "(lldb) Build & Launch Editor PROJECT_NAME",
+            "name": "Build & Launch Editor PROJECT_NAME",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/bin/godot.osx.tools.64",
@@ -31,7 +31,7 @@
             "preLaunchTask" : "build debug"
 		},
 		{
-            "name": "(lldb) Build & Launch PROJECT_NAME Scene",
+            "name": "Build & Launch PROJECT_NAME Scene",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/bin/godot.osx.tools.64",
