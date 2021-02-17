@@ -1,0 +1,53 @@
+{
+    "version" : "2.0.0",
+    "tasks": [
+        {
+            "label": "build debug",
+            "type" :"shell",
+            "command": "/usr/local/bin/scons",
+            "group": "build",
+			"args": ["platform=osx", "verbose=yes", "bits=64", "target=debug", "tools=yes", "-j", "8"],
+			"problemMatcher":"$msCompile",
+			"options": {
+                "env": {
+					
+                }
+            },
+		},
+		{
+            "label": "build release",
+            "type" :"shell",
+            "command": "/usr/local/bin/scons",
+            "group": "build",
+            "args": ["platform=osx", "verbose=yes", "bits=64", "target=release", "tools=yes", "-j", "8"],
+			"problemMatcher":"$msCompile",
+			"options": {
+                "env": {
+					
+                }
+            },
+		},
+		{
+            "label": "build debug sanitized",
+            "type" :"shell",
+            "command": "/usr/local/bin/scons",
+            "group": "build",
+            "args": ["platform=osx", "use_asan=yes", "verbose=yes", "target=debug", "tools=yes", "-j", "8"],
+			"problemMatcher":"$msCompile",
+			"options": {
+                "env": {
+					"use_asan": "yes",
+                }
+            },
+		},
+        {
+            "label": "clean",
+            "type" :"shell",
+            "command": "/usr/local/bin/scons",
+            "group": "build",
+            "args": ["--clean", "platform=osx"],
+            "problemMatcher":"$msCompile"
+        }
+    ]
+
+}
