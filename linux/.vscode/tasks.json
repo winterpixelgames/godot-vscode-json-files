@@ -1,0 +1,68 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build debug",
+            "type": "shell",
+            "command": "scons",
+            "args": [
+                "platform=linuxbsd", "verbose=yes", "bits=64", "target=debug", "tools=yes", "-j", "8"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile",
+			"options": {
+                "env": {
+					
+                }
+            }
+        },
+        {
+            "label": "build release",
+            "type": "shell",
+            "command": "scons",
+            "args": [
+                "platform=linuxbsd", "verbose=yes", "bits=64", "target=release", "tools=yes", "-j", "8"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile",
+			"options": {
+                "env": {
+					
+                }
+            }
+        },
+        {
+            "label": "build debug sanitized",
+            "type": "shell",
+            "command": "scons",
+            "args": [
+                "platform=linuxbsd", "use_asan=yes", "verbose=yes", "bits=64", "target=debug", "tools=yes", "-j", "8"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile",
+			"options": {
+                "env": {
+					"use_asan": "yes"
+                }
+            }
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "scons",
+            "args": [
+                "platform=linuxbsd", "--clean"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile",
+			"options": {
+                "env": {
+					
+                }
+            }
+        }
+		
+    ]
+}
